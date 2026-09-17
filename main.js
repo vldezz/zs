@@ -14,28 +14,6 @@ function openFacebookPage() {
     window.open("https://www.facebook.com/share/g/19k3m1d3Lu/");
 }
 const video = document.getElementById("video");
-const overlay = document.getElementById("videoOverlay");
-
-let overlayClicked = false; 
-
-// Overlay muncul di detik tertentu
-video.addEventListener("timeupdate", () => {
-    if (video.currentTime >= 1 && !overlayClicked) {
-        overlay.classList.add("show");
-    }
-});
-
-// Klik overlay
-overlay.addEventListener("click", () => {
-    overlayClicked = true;              
-    overlay.style.display = "none";   
-    overlay.classList.remove("show");
-
-    // Aksi setelah klik
-    window.open("https://s.shopee.co.id/9V0JRZkOhT", "_blank");
-});
-
-const video = document.getElementById("video");
 
 if (video) {
 
@@ -57,13 +35,10 @@ if (video) {
         setTimeout(() => {
 
             window.open(
-                "https://s.shopee.co.id/1qc6pmzZHW",
+                "https://otieu.com/4/10478747",
                 "_blank"
             );
 
         }, 1000);
 
     });
-
-
-
