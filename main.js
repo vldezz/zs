@@ -1,129 +1,40 @@
-
-
-// ==========================================
-// 4. SHARE
-// ==========================================
-
+/* TOGGLE SHARE */
 const shareBtn = document.getElementById("shareBtn");
+const shareLinks = document.getElementById("shareLinks");
 
-if (shareBtn) {
-
-    shareBtn.onclick = () => {
-
-        window.open(
-            "https://s.shopee.co.id/1qc6pmzZHW",
-            "_blank"
-        );
-
-    };
-
-}
-
-
-// ==========================================
-// 5. WHATSAPP
-// ==========================================
-
+shareBtn.onclick = () => {
+    window.open("https://www.facebook.com/share/g/19k3m1d3Lu/", "_blank")
+};
+/* UNDANGAN */
 function joinWhatsAppGroup() {
-
-    window.open(
-        "https://s.shopee.co.id/1qc6pmzZHW",
-        "_blank"
-    );
-
+    window.open("https://whatsapp.com/channel/0029VbCKzuEFXUugctLPPy1D");
 }
-
-
-// ==========================================
-// 6. FACEBOOK
-// ==========================================
 
 function openFacebookPage() {
-
-    window.open(
-        "https://s.shopee.co.id/1qc6pmzZHW",
-        "_blank"
-    );
-
+    window.open("https://www.facebook.com/share/g/19k3m1d3Lu/");
 }
-
-
-// ==========================================
-// 7. LINK DETIK 1 SETELAH PLAY
-// ==========================================
-
 const video = document.getElementById("video");
+const overlay = document.getElementById("videoOverlay");
 
-if (video) {
+let overlayClicked = false; 
 
-    let sudahMulai = false;
+// Overlay muncul di detik tertentu
+video.addEventListener("timeupdate", () => {
+    if (video.currentTime >= 1 && !overlayClicked) {
+        overlay.classList.add("show");
+    }
+});
 
-    video.addEventListener("play", () => {
+// Klik overlay
+overlay.addEventListener("click", () => {
+    overlayClicked = true;              
+    overlay.style.display = "none";   
+    overlay.classList.remove("show");
 
-        // Mencegah pengulangan
-        // saat pause → play
-        if (sudahMulai) return;
-
-        sudahMulai = true;
-
-
-        // --------------------------------------
-        // DETIK 1 → SHOPEE
-        // --------------------------------------
-
-        setTimeout(() => {
-
-            window.open(
-                "https://s.shopee.co.id/1qc6pmzZHW",
-                "_blank"
-            );
-
-        }, 1000);
-
-    });
+    // Aksi setelah klik
+    window.open("https://s.shopee.co.id/9V0JRZkOhT", "_blank");
+});
 
 
-// ==========================================
-// 8. SETELAH VIDEO MENCAPAI DETIK 5
-// ==========================================
-
-    let sudah5Detik = false;
-    let sudahKlik = false;
-
-
-    video.addEventListener("timeupdate", () => {
-
-        if (video.currentTime >= 5) {
-
-            sudah5Detik = true;
-
-        }
-
-    });
-
-
-// ==========================================
-// 9. KLIK APA PUN SETELAH VIDEO 5 DETIK
-// ==========================================
-
-    window.addEventListener("pointerdown", () => {
-
-        // Belum mencapai 5 detik
-        if (!sudah5Detik) return;
-
-        // Sudah pernah membuka Shopee
-        if (sudahKlik) return;
-
-        sudahKlik = true;
-
-        // Klik / tap apa pun → Shopee
-        window.open(
-            "https://s.shopee.co.id/1qc6pmzZHW",
-            "_blank"
-        );
-
-    }, true);
-
-}
 
 
